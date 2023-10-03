@@ -4,4 +4,32 @@ html(lang="en")
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title Document
+        link(rel="stylesheet", href="/css/main.css")
+        link(rel="stylesheet", href="/css/product.css")
     body 
+        header.main-header
+            nav.main-header__nav
+                ul.main-header__item-list
+                    li.main-header__item
+                        a(href="/") Home
+                    li.main-header__item
+                        a(href="/shop") Shop 
+                    li.main-header__item 
+                        a(href="/addProduct") Add Product
+        main
+            h1 My Products
+            p List of all the Products...
+            p 
+            if products.length >0
+            .grid
+                each product in products
+                    article.card.product-item
+                        header.card__header 
+                            h1.product__title #{product.title}
+                        div.card__image
+                            img(src=`https://source.unsplash.com/340x340/?${product.title}`)
+                        div.card__content
+                            h2.product__price $ #{product.price}
+                            p.product__description #{product.desc}
+                        .card__actions
+                            button.btn Add to Card

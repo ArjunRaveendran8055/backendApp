@@ -5,12 +5,12 @@ const productRouter=express.Router()
 const products=[]
 
 productRouter.get("/", (req,res)=>{
-    res.sendFile(path.join(__dirname,"../","pages/addProduct.html"))
+    res.render("addProduct")
 })
 
 productRouter.post("/product",(req,res)=>{
     console.log(req.body)
-    products.push({title:req.body.title})
+    products.push({title:req.body.title,price:req.body.price,desc:req.body.desc})
     res.redirect("/")
 })
 
