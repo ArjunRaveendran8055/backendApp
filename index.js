@@ -5,6 +5,9 @@ const path=require("path");
 const { shopRouter } = require("./routes/shopRoute");
 const app=express();
 
+//adding view engine(pug)
+app.set("view engine", "pug")
+app.set("views","pages")
 
 app.use(express.json())
 app.use(bodyParser.urlencoded({extended:false}))
