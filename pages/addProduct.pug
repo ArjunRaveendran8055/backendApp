@@ -1,29 +1,17 @@
-doctype html
-html(lang="en")
-    head
-        meta(charset="UTF-8")
-        meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Document
-        link(rel="stylesheet", href="/css/main.css")
-        link(rel="stylesheet", href="/css/product.css")
-        link(rel="stylesheet", href="/css/forms.css")
-    body 
-        header.main-header
-            nav.main-header__nav
-                ul.main-header__item-list
-                    li.main-header__item
-                        a(href="/") Home
-                    li.main-header__item
-                        a(href="/shop") Shop 
-                    li.main-header__item 
-                        a(href="/addProduct") Add Product
-        main
-            form.product-form(action='/addProduct/product' method='POST')
-                .form-control
-                    label(for='title') Title
-                        input#title(type='text' name='title')
-                    label(for='price') Price
-                        input#Price(type='text' name='price')
-                    label(for='desc') Description
-                        input#Description(type='text' name='desc')
-                        button.btn(type='submit') Add Product
+extends layouts/mainLayout.pug
+block styles
+    link(rel="stylesheet", href="/css/main.css")
+    link(rel="stylesheet", href="/css/product.css")
+    link(rel="stylesheet", href="/css/forms.css")
+
+block content
+    main
+        form.product-form(action='/addProduct/product' method='POST')
+            .form-control
+                label(for='title') Title
+                input#title(type='text' name='title')
+                label(for='price') Price
+                input#Price(type='text' name='price')
+                label(for='desc') Description
+                input#Description(type='text' name='desc')
+            button.btn(type='submit') Add Product

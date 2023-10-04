@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname,"public")))
 
 //response for home route
  app.use("/",(req,res)=>{
-    res.render("home")
+    res.render("home",{path:"/"})
 })
 
 app.use((req,res)=>{
